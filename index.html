@@ -113,13 +113,16 @@ section{padding:3.2rem 0;scroll-margin-top:72px;border-top:2px solid var(--sky)}
 }
 
 /* ---------- programme ---------- */
-.acts{display:grid;grid-template-columns:1fr 1fr;gap:0 3rem}
-@media(max-width:860px){.acts{grid-template-columns:1fr}}
+.acts{max-width:760px}
+.dayhead{font-size:2rem;letter-spacing:-.02em;color:var(--grass);margin:2.4rem 0 .2rem;padding-bottom:.5rem;border-bottom:3px solid var(--sky)}
+.dayhead:first-child{margin-top:0}
 .act{padding:1.15rem 0;border-bottom:1px solid var(--line)}
 .act h3{font-size:1.55rem;display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;line-height:1.1}
-.live,.djset{font-size:.62rem;letter-spacing:.16em;position:relative;top:-2px;
+.live,.djset,.avset{font-size:.62rem;letter-spacing:.16em;position:relative;top:-2px;
   background:var(--sun);color:var(--ink);padding:.25rem .6rem;border-radius:999px}
-.act .tag{margin:.35rem 0 .65rem;color:var(--ink-soft);font-size:1rem}
+.act .slot{margin:.45rem 0 0;font-size:.82rem;letter-spacing:.05em;color:var(--ink-soft);text-transform:uppercase;line-height:1.7}
+.act .slot b{color:var(--ink)}
+.act .tag{margin:.3rem 0 .65rem;color:var(--ink-soft);font-size:1rem}
 .act .links{display:flex;flex-wrap:wrap;gap:.4rem;margin:0}
 .act .links a{
   font-size:.82rem;text-decoration:none;color:var(--grass);
@@ -127,12 +130,17 @@ section{padding:3.2rem 0;scroll-margin-top:72px;border-top:2px solid var(--sky)}
 }
 .act .links a:hover,.act .links a:focus-visible{background:var(--grass);color:#fff;border-color:var(--grass)}
 
+.orn{margin-left:.5em;letter-spacing:.12em}
+.pin{width:.8em;height:.8em;fill:var(--grass);vertical-align:-.02em;margin-right:.18em}
+
 /* ---------- info ---------- */
 .cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 @media(max-width:820px){.cols{grid-template-columns:1fr}}
 .card{border:2px solid var(--line);border-radius:26px;padding:1.4rem 1.5rem}
 .card h3{font-size:1.35rem;margin-bottom:.6rem}
 .card a{color:var(--grass)}
+.card a.btn{color:#fff}
+.card a.btn:hover,.card a.btn:focus-visible{color:var(--ink)}
 .coords{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;background:var(--mist);border-radius:999px;padding:.6rem .5rem .6rem 1.1rem;margin:.7rem 0 .9rem}
 .copy{
   font-family:inherit;font-weight:700;font-size:.75rem;letter-spacing:.12em;
@@ -143,9 +151,11 @@ section{padding:3.2rem 0;scroll-margin-top:72px;border-top:2px solid var(--sky)}
 .rides{list-style:none;margin:.4rem 0 .9rem;padding:0}
 .rides li{display:flex;gap:.9rem;padding:.7rem 0;border-top:1px dashed var(--line);align-items:baseline;flex-wrap:wrap}
 .rides li:first-child{border-top:0}
-.rides .day{font-size:.78rem;letter-spacing:.16em;color:var(--grass);min-width:6rem}
+.rides .day{font-size:.78rem;letter-spacing:.16em;color:var(--grass);min-width:10.5rem}
 .rides .when{font-size:.95rem;color:var(--ink-soft)}
-.rides .tbc{display:inline-block;margin-top:.35rem;background:var(--mist);border-radius:999px;padding:.1rem .7rem}
+.rides .times{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem}
+.rides .times b{background:var(--mist);border-radius:999px;padding:.16rem .8rem;font-size:.92rem;color:var(--ink)}
+.btn.inline{margin-top:.6rem;padding:.65rem 1.5rem;font-size:1rem}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
 @media(max-width:900px){.grid3{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:620px){.grid3{grid-template-columns:1fr}}
@@ -240,79 +250,179 @@ footer{padding-top:2.6rem;border-top:2px solid var(--sky)}
       <h2>Programme</h2>
     </div>
     <div class="acts">
-      <!-- NOTE: links labelled "PSR ..." were reconstructed from truncated addresses — verify before publishing. -->
+      <h3 class="dayhead">Friday</h3>
       <article class="act">
-        <h3>LAZYDOLPHIN <span class="live">LIVE</span></h3>
-        <p class="tag">Aquatic memory loops</p>
-        <p class="links"><a href="https://soundcloud.com/dominyke">soundcloud account</a><a href="https://soundcloud.com/dominyke/sets/music-for-stretching">music for stretching</a></p>
-      </article>
-      <article class="act">
-        <h3>ONEGIN <span class="live">LIVE</span></h3>
-        <p class="tag">Migrations between soil and circuitry</p>
-        <p class="links"><a href="https://soundcloud.com/eugine_onegin">soundcloud account</a></p>
-      </article>
-      <article class="act">
-        <h3>DJ LONELY b2b OPEN TABS <span class="djset">DJ SET</span></h3>
-        <p class="tag">Multiple browser reality layering</p>
-        <p class="links"><a href="https://soundcloud.com/palanga_street_radio/transmissions-from-576878406">PSR transmissions I</a><a href="https://soundcloud.com/palanga_street_radio/transmissions-from-353127221">PSR transmissions II</a></p>
-      </article>
-      <article class="act">
-        <h3>LUCKY b2b SASHAROMA <span class="djset">DJ SET</span></h3>
-        <p class="tag">Sugar dense oscillation</p>
-        <p class="links"><a href="https://soundcloud.com/viet-ines/vset-wsasharoma-lucky">the b2b set</a></p>
-      </article>
-      <article class="act">
-        <h3>KNOK1 <span class="djset">DJ SET</span></h3>
-        <p class="tag">Cracked rhythm architecture</p>
-        <p class="links"><a href="https://soundcloud.com/knok1">soundcloud account</a><a href="https://soundcloud.com/palanga_street_radio/kuti-6-with-knok1">PSR: Kūti 6</a></p>
-      </article>
-      <article class="act">
-        <h3>DARBDAVYS b2b COSMO OPERATOR <span class="djset">DJ SET</span></h3>
-        <p class="tag">Labor frequency modulation unit</p>
-        <p class="links"><a href="https://soundcloud.com/darbdavys">darbdavys account</a><a href="https://soundcloud.com/cosmo_operator">cosmo operator account</a></p>
+        <h3>OPEN DECKS</h3>
+        <p class="slot"><b>15:00</b> @ <span class="stage">Main Stage</span></p>
+        <p class="tag">Yours, if you bring a USB</p>
       </article>
       <article class="act">
         <h3>BINDOKAS <span class="djset">DJ SET</span></h3>
+        <p class="slot"><b>17:00</b> @ <span class="stage">Main Stage</span></p>
         <p class="tag">Saturn-return baselines</p>
         <p class="links"><a href="https://soundcloud.com/matas-bindokas">soundcloud account</a><a href="https://soundcloud.com/palanga_street_radio/planet-saturn-6-with-bindokas">PSR: Planet Saturn 6</a></p>
       </article>
       <article class="act">
-        <h3>TRAFIK <span class="djset">DJ SET</span></h3>
-        <p class="tag">Coffee induced morning at low speed</p>
-        <p class="links"><a href="https://soundcloud.com/asy-lum">soundcloud account</a><a href="https://soundcloud.com/palanga_street_radio/labas-vytas-2-3-with-adhd">PSR: Labas Vytas 2.3</a></p>
+        <h3>KNOK1 <span class="djset">DJ SET</span></h3>
+        <p class="slot"><b>18:00</b> @ <span class="stage">Main Stage</span></p>
+        <p class="tag">Cracked rhythm architecture</p>
+        <p class="links"><a href="https://soundcloud.com/knok1">soundcloud account</a><a href="https://soundcloud.com/palanga_street_radio/kuti-6-with-knok1">PSR: Kūti 6</a></p>
       </article>
       <article class="act">
-        <h3>RAF SYMONS b2b DJ CLUB DISASTER <span class="djset">DJ SET</span></h3>
-        <p class="tag">Pressure systems tightening</p>
-        <p class="links"><a href="https://soundcloud.com/palanga_street_radio/disco-reggae-2-with-raf-symons">PSR: Disco Reggae 2</a></p>
+        <h3>WILTE <span class="djset">DJ SET</span></h3>
+        <p class="slot"><b>19:00</b> @ <span class="stage">Main Stage</span></p>
+        <p class="tag">Peripheral motion studies</p>
+        <p class="links"><a href="https://soundcloud.com/vilt-mili-nait-764854223">soundcloud account</a><a href="https://soundcloud.com/palanga_street_radio/edgy-corners-2">PSR: Edgy Corners 2</a></p>
       </article>
       <article class="act">
         <h3>DJ SAD CAT <span class="djset">DJ SET</span></h3>
+        <p class="slot"><b>20:00</b> @ <span class="stage">Main Stage</span></p>
         <p class="tag">Heartbreak circulating our coastal fields</p>
         <p class="links"><a href="https://soundcloud.com/stygosdanguj">soundcloud account</a><a href="https://soundcloud.com/palanga_street_radio/sets/daqydreaming">PSR: Daydreaming</a></p>
       </article>
       <article class="act">
-        <h3>ELEKTROLITAS <span class="djset">DJ SET</span></h3>
-        <p class="tag">Restoring mineral balance under equatorial conditions</p>
-        <p class="links"><a href="https://soundcloud.com/elektrolite_bzz">soundcloud account</a><a href="https://soundcloud.com/palanga_street_radio/sets/sweet-sticky">PSR: Sweet &amp; Sticky</a></p>
+        <h3>DARBDAVYS b2b COSMO OPERATOR <span class="djset">DJ SET</span></h3>
+        <p class="slot"><b>21:00</b> @ <span class="stage">Main Stage</span></p>
+        <p class="tag">Labor frequency modulation unit</p>
+        <p class="links"><a href="https://soundcloud.com/darbdavys">darbdavys account</a><a href="https://soundcloud.com/cosmo_operator">cosmo operator account</a></p>
       </article>
       <article class="act">
-        <h3>CELESTE SELECTS <span class="djset">DJ SET</span></h3>
-        <p class="tag">Emotional frequencies with residue left behind</p>
-        <p class="links"><a href="https://soundcloud.com/celesteselects">soundcloud account</a><a href="https://soundcloud.com/palanga_street_radio/guest-mix-if-words-were">PSR: If Words Were</a></p>
+        <h3>YOOLIA b2b LUKAS FESER <span class="djset">DJ SET</span></h3>
+        <p class="slot"><b>22:30</b> @ <span class="stage">Main Stage</span></p>
+        <p class="tag">Paradise feedback loops</p>
+        <p class="links"><a href="https://soundcloud.com/palanga_street_radio/vakar-ciongas-17">PSR: Vakar Čiongas 17</a></p>
       </article>
       <article class="act">
-        <h3>GYTIS <span class="djset">DJ SET</span></h3>
-        <p class="tag">Detours through thermal zones</p>
-        <p class="links"><a href="https://soundcloud.com/gytisgec">soundcloud account</a><a href="https://soundcloud.com/palanga_street_radio/sets/kaukai-gatv-je">PSR: Kaukai gatvėje</a></p>
+        <h3>GR8 x NADIA x FIRMA VON IRMA <span class="avset">AUDIOVISUAL</span></h3>
+        <p class="slot"><b>23:00</b> @ <span class="stage">Second Stage</span></p>
+        <p class="tag">Dream residue. Pink. Green.<span class="orn">°❀⋆.ೃ࿔*</span></p>
+      </article>
+      <h3 class="dayhead">Saturday</h3>
+      <article class="act">
+        <h3>RAF SYMONS b2b DJ CLUB DISASTER <span class="djset">DJ SET</span></h3>
+        <p class="slot"><b>00:00 AM</b> @ <span class="stage">Main Stage</span></p>
+        <p class="tag">Pressure systems tightening</p>
+        <p class="links"><a href="https://soundcloud.com/palanga_street_radio/disco-reggae-2-with-raf-symons">PSR: Disco Reggae 2</a></p>
+      </article>
+      <article class="act">
+        <h3>AULERIUS <span class="avset">AUDIOVISUAL</span></h3>
+        <p class="slot"><b>00:30 AM</b> @ <span class="stage">Second Stage</span></p>
+        <p class="tag">Slapstick roulette. Clone chorus.<span class="orn">𓁹 𓁹</span></p>
+      </article>
+      <article class="act">
+        <h3>ONEGIN <span class="live">LIVE</span></h3>
+        <p class="slot"><b>01:30 AM</b> @ <span class="stage">Main Stage</span></p>
+        <p class="tag">Migrations between soil and circuitry</p>
+        <p class="links"><a href="https://soundcloud.com/eugine_onegin">soundcloud account</a></p>
+      </article>
+      <article class="act">
+        <h3>EGLĖGUD1 <span class="djset">DJ SET</span></h3>
+        <p class="slot"><b>02:30 AM</b> @ <span class="stage">Main Stage</span></p>
+        <p class="tag">Impulse mechanics</p>
+        <p class="links"><a href="https://soundcloud.com/ege1">soundcloud account</a><a href="https://soundcloud.com/ege1/2020-egle-gud1-kulturos-naktis">Kultūros Naktis 2020</a></p>
+      </article>
+      <article class="act">
+        <h3>DJ LONELY b2b OPEN TABS <span class="djset">DJ SET</span></h3>
+        <p class="slot"><b>03:30 AM</b> @ <span class="stage">Main Stage</span></p>
+        <p class="tag">Multiple browser reality layering</p>
+        <p class="links"><a href="https://soundcloud.com/palanga_street_radio/transmissions-from-576878406">PSR transmissions I</a><a href="https://soundcloud.com/palanga_street_radio/transmissions-from-353127221">PSR transmissions II</a></p>
+      </article>
+      <article class="act">
+        <h3>OPEN DECKS</h3>
+        <p class="slot"><b>11:00</b> @ <span class="stage">Second Stage</span></p>
+        <p class="tag">Yours, if you bring a USB</p>
       </article>
       <article class="act">
         <h3>AURA <span class="djset">DJ SET</span></h3>
+        <p class="slot"><b>15:00</b> @ <span class="stage">Main Stage</span></p>
         <p class="tag">Broken currents, crispy melodies, climate shifts</p>
         <p class="links"><a href="https://soundcloud.com/aurauradj">soundcloud account</a><a href="https://soundcloud.com/palanga_street_radio/spectrums-1">PSR: Spectrums 1</a></p>
       </article>
       <article class="act">
+        <h3>CELESTE SELECTS <span class="djset">DJ SET</span></h3>
+        <p class="slot"><b>16:00</b> @ <span class="stage">Main Stage</span></p>
+        <p class="tag">Emotional frequencies with residue left behind</p>
+        <p class="links"><a href="https://soundcloud.com/celesteselects">soundcloud account</a><a href="https://soundcloud.com/palanga_street_radio/guest-mix-if-words-were">PSR: If Words Were</a></p>
+      </article>
+      <article class="act">
+        <h3>ELEKTROLITAS <span class="djset">DJ SET</span></h3>
+        <p class="slot"><b>17:00</b> @ <span class="stage">Main Stage</span></p>
+        <p class="tag">Restoring mineral balance under equatorial conditions</p>
+        <p class="links"><a href="https://soundcloud.com/elektrolite_bzz">soundcloud account</a><a href="https://soundcloud.com/palanga_street_radio/sets/sweet-sticky">PSR: Sweet &amp; Sticky</a></p>
+      </article>
+      <article class="act">
+        <h3>LAZYDOLPHIN <span class="live">LIVE</span></h3>
+        <p class="slot"><b>18:00</b> @ <span class="stage">Main Stage</span></p>
+        <p class="tag">Aquatic memory loops</p>
+        <p class="links"><a href="https://soundcloud.com/dominyke">soundcloud account</a><a href="https://soundcloud.com/dominyke/sets/music-for-stretching">music for stretching</a></p>
+      </article>
+      <article class="act">
+        <h3>GYTIS <span class="djset">DJ SET</span></h3>
+        <p class="slot"><b>19:00</b> @ <span class="stage">Main Stage</span></p>
+        <p class="tag">Detours through thermal zones</p>
+        <p class="links"><a href="https://soundcloud.com/gytisgec">soundcloud account</a><a href="https://soundcloud.com/palanga_street_radio/sets/kaukai-gatv-je">PSR: Kaukai gatvėje</a></p>
+      </article>
+      <article class="act">
+        <h3>ALEKSANDAR KORUGA <span class="live">LIVE</span></h3>
+        <p class="slot"><b>20:00</b> @ <span class="stage">Main Stage</span></p>
+        <p class="tag">Tectonic drone + volatile terrain euphony</p>
+        <p class="links"><a href="https://aleksandarkoruga.bandcamp.com/">bandcamp</a><a href="https://soundcloud.com/operator-radio/aleksandar-koruga">Operator Radio set</a></p>
+      </article>
+      <article class="act">
+        <h3>€680×€480 <span class="avset">AUDIOVISUAL</span></h3>
+        <p class="slot"><b>21:00</b> @ <span class="stage">Second Stage</span></p>
+        <p class="tag">Glitch tolerated. Feedback encouraged.<span class="orn">⸮ ﹖ ︖ ⁇ ¿ ‽ ？</span></p>
+      </article>
+      <article class="act">
+        <h3>ALLOSCILLATING <span class="live">LIVE</span></h3>
+        <p class="slot"><b>21:30</b> @ <span class="stage">Main Stage</span></p>
+        <p class="tag">Leftfield circuitry + ecosystem analysis</p>
+        <p class="links"><a href="https://www.youtube.com/playlist?list=PLsI9mbgz8zasPXeKtZkE0weqx2A5JrfZr">youtube playlist</a></p>
+      </article>
+      <article class="act">
+        <h3>MATT b2b TRI.PYAT <span class="djset">DJ SET</span></h3>
+        <p class="slot"><b>22:30</b> @ <span class="stage">Main Stage</span></p>
+        <p class="tag">Cross wired frequency collisions</p>
+        <p class="links"><a href="https://soundcloud.com/mattdbndt">matt account</a><a href="https://soundcloud.com/longkissgoodnight">tri.pyat account</a></p>
+      </article>
+      <article class="act">
+        <h3>DARBDAVYS x DAINORA ALEKSAITĖ <span class="avset">AUDIOVISUAL</span></h3>
+        <p class="slot"><b>23:00</b> @ <span class="stage">Second Stage</span></p>
+        <p class="tag">Liquid light. Folder hypnosis.<span class="orn">⊹ ࣪ ﹏𓊝﹏⊹ ࣪ ˖</span></p>
+      </article>
+      <h3 class="dayhead">Sunday</h3>
+      <article class="act">
+        <h3>ALYSSA MYLANNO <span class="djset">DJ SET</span></h3>
+        <p class="slot"><b>00:00 AM</b> @ <span class="stage">Main Stage</span></p>
+        <p class="tag">Velvet groove gradients</p>
+        <p class="links"><a href="https://soundcloud.com/alyssamylanno">soundcloud account</a><a href="https://soundcloud.com/palanga_street_radio/beach-relax-10-with-alyssa">PSR: Beach Relax 10</a></p>
+      </article>
+      <article class="act">
+        <h3>LUCKY b2b SASHAROMA <span class="djset">DJ SET</span></h3>
+        <p class="slot"><b>01:00 AM</b> @ <span class="stage">Main Stage</span></p>
+        <p class="tag">Sugar dense oscillation</p>
+        <p class="links"><a href="https://soundcloud.com/viet-ines/vset-wsasharoma-lucky">the b2b set</a></p>
+      </article>
+      <article class="act">
+        <h3>UGLY <span class="djset">DJ SET</span></h3>
+        <p class="slot"><b>02:30 AM</b> @ <span class="stage">Main Stage</span></p>
+        <p class="tag">Local resonance + fairy core processing</p>
+        <p class="links"><a href="https://soundcloud.com/egliniz">soundcloud account</a><a href="https://soundcloud.com/palanga_street_radio/2nd-bes25">PSR: 2nd Bes25</a></p>
+      </article>
+      <article class="act">
+        <h3>TRAFIK <span class="djset">DJ SET</span></h3>
+        <p class="slot"><b>11:00</b> @ <span class="stage">Main Stage</span></p>
+        <p class="tag">Coffee induced morning at low speed</p>
+        <p class="links"><a href="https://soundcloud.com/asy-lum">soundcloud account</a><a href="https://soundcloud.com/palanga_street_radio/labas-vytas-2-3-with-adhd">PSR: Labas Vytas 2.3</a></p>
+      </article>
+      <article class="act">
+        <h3>GRETA ONA + YOGA WITH 3/5 <span class="live">LIVE</span></h3>
+        <p class="slot"><b>12:00</b> @ <span class="stage">Main Stage</span></p>
+        <p class="tag">Morning harmonizing stretches</p>
+      </article>
+      <article class="act">
         <h3>OPEN DECKS</h3>
+        <p class="slot"><b>13:00</b> @ <span class="stage">Main Stage</span></p>
         <p class="tag">Yours, if you bring a USB</p>
       </article>
     </div>
@@ -322,7 +432,7 @@ footer{padding-top:2.6rem;border-top:2px solid var(--sky)}
 <section id="getting-there">
   <div class="wrap rv">
     <div class="sec-head">
-      <h2>Skvotiškės, near Aukštadvaris</h2>
+      <h2><svg class="pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Skvotiškės, near Aukštadvaris</h2>
       <p>An hour outside Vilnius in the Trakai district. Come by car, by bus and shuttle, or walk in through fields &amp; forest.</p>
     </div>
     <div class="cols">
@@ -335,15 +445,15 @@ footer{padding-top:2.6rem;border-top:2px solid var(--sky)}
         </div>
         <p><a href="https://maps.app.goo.gl/qpMMcnXgZknFdkzr6">Open in Google Maps →</a></p>
         <p>It's around an hour's walk from Aukštadvaris to the site along a beautiful forest road.</p>
-        <p>Looking for a lift? Write to <a href="mailto:hello@palanga.live">hello@palanga.live</a> and we'll send you an invite to the festival group, where carpooling gets arranged.</p>
+        <p>Looking for a lift? Write to <a href="mailto:hello@palanga.live">hello@palanga.live</a> and we'll send you an invite to the festival Telegram group, where carpooling gets arranged.</p>
       </div>
       <div class="card">
         <h3>Shuttle pickups</h3>
-        <p>Free pickups run between the Aukštadvaris bus stop and the festival.</p>
+        <p>Free pickups run between the Aukštadvaris bus stop and the festival. Please fill in the form below to secure a place.</p>
+        <p><a class="btn inline" href="https://forms.gle/LDieQVM5nXYBNq237">Reserve a shuttle seat</a></p>
         <ul class="rides">
-          <li><span class="day">FRIDAY</span><span class="when">Bus stop → festival<br><span class="tbc">times to be announced</span></span></li>
-          <li><span class="day">SATURDAY</span><span class="when">Bus stop → festival<br><span class="tbc">times to be announced</span></span></li>
-          <li><span class="day">SUNDAY</span><span class="when">Festival → bus stop<br><span class="tbc">times to be announced</span></span></li>
+          <li><span class="day">FRIDAY &amp; SATURDAY</span><span class="when">Bus stop → festival<span class="times"><b>12:00</b><b>14:30</b><b>18:00</b><b>19:30</b></span></span></li>
+          <li><span class="day">SUNDAY</span><span class="when">Festival → bus stop<span class="times"><b>13:50</b><b>15:00</b><b>16:20</b><b>17:50</b></span></span></li>
         </ul>
         <p>On Sunday, meet at the info centre / merch stand before leaving.</p>
       </div>
@@ -373,8 +483,9 @@ footer{padding-top:2.6rem;border-top:2px solid var(--sky)}
       </div>
       <div class="card">
         <h3>Bar</h3>
-        <p>Beer, cocktails and non-alcoholic drinks — kombucha, Lynxmonadas, coffee, tea. Prices are friendly and every drink comes with a chat, so please use the bar instead of bringing your own.</p>
+        <p>Beer, cocktails and non-alcoholic drinks — kombucha, Lynxmonadas, coffee. Prices are friendly and every drink comes with a chat, so please use the bar instead of bringing your own.</p>
         <p>We use rental cups to cut waste. Your own favourite cup is very welcome.</p>
+        <p>Please don't bring any glass to the festival.</p>
       </div>
       <div class="card">
         <h3>Paying</h3>
