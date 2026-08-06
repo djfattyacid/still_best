@@ -4,10 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>STILL BEST — August 14–16, Skvotiškės</title>
-<meta name="description" content="STILL BEST — a festival by Palangos gatvės radijas. August 14–16 at Skvotiškės, near Aukštadvaris, Trakai district. Tickets €60.">
+<meta name="description" content="STILL BEST — a festival by Palanga Street Radio. August 14–16 at Skvotiškės, near Aukštadvaris, Trakai district. Tickets €60.">
 <meta property="og:title" content="STILL BEST — August 14–16">
-<meta property="og:description" content="A festival by Palangos gatvės radijas. Skvotiškės, near Aukštadvaris. Tickets €60.">
+<meta property="og:description" content="A festival by Palanga Street Radio. Skvotiškės, near Aukštadvaris. Tickets €60.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://palanga.live/still-best/">
+<meta property="og:image" content="https://palanga.live/still-best/images/cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <style>
 :root{
   --paper:#ffffff;
@@ -120,10 +123,10 @@ section{padding:3.2rem 0;scroll-margin-top:72px;border-top:2px solid var(--sky)}
 .dayhead:first-child{margin-top:0}
 .act.silence h3{color:var(--ink-soft)}
 .act{padding:1.15rem 0;border-bottom:1px solid var(--line);display:flex;gap:1.3rem;align-items:stretch}
-.act-img{flex:0 0 160px;align-self:stretch}
-.act-img img{width:100%;height:100%;object-fit:cover;border-radius:12px;display:block;background:var(--mist)}
+.act-img{flex:0 0 160px;align-self:flex-start;aspect-ratio:4/5}
+.act-img img{width:100%;height:100%;object-fit:contain;border-radius:12px;display:block;background:var(--mist)}
 .act-body{flex:1;min-width:0}
-@media(max-width:600px){.act{gap:.9rem}.act-img{flex:0 0 104px}}
+@media(max-width:600px){.act{gap:.9rem}.act-img{flex:0 0 116px}}
 .act:last-child,.act:has(+ .dayhead){border-bottom:0;padding-bottom:0}
 .act h3{font-size:1.55rem;display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;line-height:1.1}
 .live,.djset,.avset{font-size:.62rem;letter-spacing:.16em;position:relative;top:-2px;
@@ -153,6 +156,12 @@ section{padding:3.2rem 0;scroll-margin-top:72px;border-top:2px solid var(--sky)}
 .coords{display:flex;align-items:center;gap:.55rem;flex-wrap:wrap;background:var(--mist);border-radius:999px;padding:.6rem .5rem .6rem 1.1rem;margin:.7rem 0 .9rem}
 .clabel{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
 .mini{font-size:1.08rem;margin:1.3rem 0 .35rem;letter-spacing:-.01em}
+@media(max-width:560px){
+  .coords{display:grid;grid-template-columns:1fr auto;align-items:center;gap:.3rem .7rem;
+    border-radius:18px;padding:.75rem .8rem .75rem 1rem}
+  .clabel{grid-column:1 / -1}
+  .copy{margin-left:0;justify-self:end}
+}
 .copy{
   font-family:inherit;font-weight:700;font-size:.75rem;letter-spacing:.12em;
   border:2px solid var(--sky);background:#fff;border-radius:999px;padding:.35rem .95rem;
@@ -245,9 +254,9 @@ footer{padding-top:2.6rem;border-top:2px solid var(--sky)}
       </div>
       <div class="tk">
         <h3>Group of five</h3>
-        <div class="price">€280<small>AUGUST 14–16</small></div>
-        <p>€56 per person — €20 off the full price. One checkout for all five.</p>
-        <a class="btn" href="https://donate.stripe.com/dRm4gA1Bv9MV5aq1yg67S0e">Buy for five</a>
+        <div class="price">€250<small>AUGUST 14–16</small></div>
+        <p>€50 per person — €50 off the full price. One checkout for all five.</p>
+        <a class="btn" href="https://donate.stripe.com/dRmdRa3JDaQZcCS3Go67S0h">Buy for five</a>
       </div>
       <div class="tk">
         <h3>Single day</h3>
@@ -643,6 +652,11 @@ footer{padding-top:2.6rem;border-top:2px solid var(--sky)}
       <div class="card">
         <h3>Workshops</h3>
         <p>Workshops run through the weekend. We'll announce them soon.</p>
+      </div>
+      <div class="card">
+        <h3>Let's connect</h3>
+        <p>Join the Still Best Telegram group chat for carpooling, announcements, lost &amp; found and fun initiatives.</p>
+        <p>You'll receive the invitation with your ticket or in a newsletter. You'll also find the invitation QR code at the entrance.</p>
       </div>
       <div class="card cake">
         <h3>Sunday cake</h3>
