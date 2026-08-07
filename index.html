@@ -86,7 +86,7 @@ p:last-child{margin-bottom:0}
 @media(max-width:760px){.jump{grid-template-columns:repeat(2,1fr)}}
 
 /* ---------- sections ---------- */
-section{padding:3.2rem 0;scroll-margin-top:72px;border-top:2px solid var(--sky)}
+section{padding:2.6rem 0 3.4rem;scroll-margin-top:72px}
 .sec-head{margin-bottom:2rem}
 .sec-head h2{font-size:clamp(2.2rem,6.4vw,3.8rem);letter-spacing:-.03em}
 .sec-head p{margin:.9rem 0 0;max-width:60ch;color:var(--ink-soft)}
@@ -118,16 +118,22 @@ section{padding:3.2rem 0;scroll-margin-top:72px;border-top:2px solid var(--sky)}
 }
 
 /* ---------- programme ---------- */
-.acts{max-width:760px}
-.dayhead{font-size:2rem;letter-spacing:-.02em;color:var(--grass);margin:4.5rem 0 .2rem;padding-bottom:.5rem;border-bottom:3px solid var(--sky)}
-.dayhead:first-child{margin-top:0}
+.acts{max-width:860px}
+.dayhead{position:sticky;top:60px;z-index:20;background:var(--paper);
+  font-size:2rem;letter-spacing:-.02em;color:var(--grass);margin:4.5rem 0 .2rem;
+  padding:.45rem 0 .5rem;border-bottom:3px solid var(--sky)}
+.day:first-child .dayhead{margin-top:0}
 .act.silence h3{color:var(--ink-soft)}
-.act{padding:1.15rem 0;border-bottom:1px solid var(--line);display:flex;gap:1.3rem;align-items:stretch}
-.act-img{flex:0 0 160px;align-self:flex-start;aspect-ratio:4/5}
+.act{padding:1.15rem 0;display:flex;gap:1.4rem;align-items:center}
+.act-img{flex:0 0 240px;aspect-ratio:4/5;margin-left:-3px}
 .act-img img{width:100%;height:100%;object-fit:contain;border-radius:12px;display:block;background:var(--mist)}
 .act-body{flex:1;min-width:0}
-@media(max-width:600px){.act{gap:.9rem}.act-img{flex:0 0 116px}}
-.act:last-child,.act:has(+ .dayhead){border-bottom:0;padding-bottom:0}
+.act > .act-body:first-child{margin-left:calc(240px + 1.4rem)}
+@media(max-width:900px){.act-img{flex:0 0 180px}
+  .act > .act-body:first-child{margin-left:calc(180px + 1.4rem)}}
+@media(max-width:600px){.act{gap:.9rem;align-items:flex-start}.act-img{flex:0 0 116px;margin-left:0}
+  .act > .act-body:first-child{margin-left:calc(116px + .9rem)}}
+.day .act:last-child{padding-bottom:0}
 .act h3{font-size:1.55rem;display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;line-height:1.1}
 .live,.djset,.avset{font-size:.62rem;letter-spacing:.16em;position:relative;top:-2px;
   background:var(--sun);color:var(--ink);padding:.25rem .6rem;border-radius:999px}
@@ -169,8 +175,7 @@ section{padding:3.2rem 0;scroll-margin-top:72px;border-top:2px solid var(--sky)}
 }
 .copy:hover{border-color:var(--grass);color:var(--grass)}
 .rides{list-style:none;margin:.4rem 0 .9rem;padding:0}
-.rides li{display:flex;gap:.9rem;padding:.7rem 0;border-top:1px dashed var(--line);align-items:baseline;flex-wrap:wrap}
-.rides li:first-child{border-top:0}
+.rides li{display:flex;gap:.9rem;padding:.55rem 0;align-items:baseline;flex-wrap:wrap}
 .rides .day{font-size:.78rem;letter-spacing:.16em;color:var(--grass);min-width:10.5rem}
 .rides .when{font-size:.95rem;color:var(--ink-soft)}
 .rides .times{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem}
@@ -187,24 +192,38 @@ section{padding:3.2rem 0;scroll-margin-top:72px;border-top:2px solid var(--sky)}
 .rules li::marker{color:var(--sun)}
 
 /* ---------- footer ---------- */
-footer{padding-top:2.6rem;border-top:2px solid var(--sky)}
-.f-in{display:flex;flex-wrap:wrap;gap:1.2rem 2rem;align-items:flex-end}
-.f-in p{color:var(--ink-soft);max-width:36ch}
-.f-links{margin-left:auto;display:flex;gap:1.2rem;flex-wrap:wrap}
+footer{padding-top:2.6rem}
+.f-in{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.9rem}
+.f-in p{color:var(--ink-soft);max-width:46ch}
+.f-links{display:flex;gap:1.6rem;flex-wrap:wrap;justify-content:center}
 .f-links a{font-size:.92rem;color:var(--ink-soft)}
 .f-links a:hover{color:var(--grass)}
-.ground{
-  height:clamp(120px,18vw,200px);
-  background:url("/still-best/images/ground.jpg") no-repeat right bottom;
-  background-size:auto 100%;
-  margin-top:1.6rem;
-}
+.ground{height:clamp(130px,20vw,215px);margin-top:1.8rem;
+  background:url("/still-best/images/ground.jpg") no-repeat center bottom;background-size:auto 100%}
+
 
 /* ---------- reveal ---------- */
 .rv{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
 .sec-head p,.act .tag,.tk p,.card p,.note,.f-in p,.rides .when{font-weight:400}
+
+/* ---------- heading animations ---------- */
+@keyframes hb-wave{0%,100%{transform:translateY(0)}35%{transform:translateY(-6px)}65%{transform:translateY(2.5px)}}
+.anim-wave span{display:inline-block;animation:hb-wave .95s ease-in-out both}
+@keyframes hb-shake{0%,100%{transform:translateX(0)}
+  6%{transform:translateX(-8px)}14%{transform:translateX(8px)}22%{transform:translateX(-7px)}
+  30%{transform:translateX(7px)}38%{transform:translateX(-5px)}46%{transform:translateX(5px)}
+  54%{transform:translateX(-4px)}62%{transform:translateX(4px)}70%{transform:translateX(-2px)}
+  78%{transform:translateX(2px)}86%{transform:translateX(-1px)}94%{transform:translateX(1px)}}
+.anim-shake{animation:hb-shake 2s ease-out both}
+@keyframes hb-pulse{0%,100%{transform:scale(1)}22%{transform:scale(1.07)}48%{transform:scale(.96)}72%{transform:scale(1.03)}}
+.anim-pulse{animation:hb-pulse 2s ease-in-out both;transform-origin:left center}
+@keyframes hb-green{0%,100%{color:var(--ink)}45%,55%{color:var(--grass)}}
+.anim-green span{display:inline-block;animation:hb-green .8s ease-in-out both}
+@media (prefers-reduced-motion:reduce){
+  .anim-wave span,.anim-shake,.anim-pulse,.anim-green span{animation:none}
+}
 :focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:6px}
 </style>
 </head>
@@ -275,6 +294,7 @@ footer{padding-top:2.6rem;border-top:2px solid var(--sky)}
       <h2>Programme</h2>
     </div>
     <div class="acts">
+      <div class="day">
       <h3 class="dayhead">Friday, August 14</h3>
       <article class="act">
       <div class="act-body">
@@ -394,6 +414,8 @@ footer{padding-top:2.6rem;border-top:2px solid var(--sky)}
         <h3>SILENCE HOURS FROM 5:00 AM</h3>
         </div>
       </article>
+      </div>
+      <div class="day">
       <h3 class="dayhead">Saturday, August 15</h3>
       <article class="act">
       <div class="act-body">
@@ -522,6 +544,8 @@ footer{padding-top:2.6rem;border-top:2px solid var(--sky)}
         <h3>SILENCE HOURS FROM 3:30 AM</h3>
         </div>
       </article>
+      </div>
+      <div class="day">
       <h3 class="dayhead">Sunday, August 16</h3>
       <article class="act">
       <div class="act-img"><img src="/still-best/images/trafik.jpg" alt="TRAFIK" loading="lazy" width="480" height="600"></div>
@@ -547,6 +571,7 @@ footer{padding-top:2.6rem;border-top:2px solid var(--sky)}
         <p class="tag">Let's cheer and dance together! Have your USB ready...</p>
       </div>
       </article>
+      </div>
     </div>
   </div>
 </section>
@@ -599,7 +624,7 @@ footer{padding-top:2.6rem;border-top:2px solid var(--sky)}
   <div class="wrap rv">
     <div class="sec-head">
       <h2>What to bring, what's on site</h2>
-      <p>Short version: a tent, a warm layer, a bowl, a bank card and a USB stick.</p>
+      <p>Short version: a tent, a warm layer, water, a bowl, a bank card and a USB stick.</p>
     </div>
     <div class="grid3">
       <div class="card important">
@@ -693,6 +718,35 @@ footer{padding-top:2.6rem;border-top:2px solid var(--sky)}
     if(window.innerHeight+window.scrollY>=document.body.scrollHeight-2) current=targets.length-1;
     links.forEach(function(a,i){ a.classList.toggle('active', i===current); });
   }
+
+  // playful heading animations
+  var animMap={tickets:'anim-wave',programme:'anim-shake','getting-there':'anim-pulse','good-to-know':'anim-green'};
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce && 'IntersectionObserver' in window){
+    var heads=[];
+    Object.keys(animMap).forEach(function(id){
+      var sec=document.getElementById(id); if(!sec) return;
+      var h=sec.querySelector('.sec-head h2'); if(!h) return;
+      var cls=animMap[id];
+      if(cls==='anim-wave'||cls==='anim-green'){
+        var txt=h.textContent, frag='';
+        for(var i=0;i<txt.length;i++){
+          var c=txt[i]===' '?'&nbsp;':txt[i];
+          frag+='<span style="animation-delay:'+(i*0.055).toFixed(3)+'s">'+c+'</span>';
+        }
+        h.innerHTML=frag;
+      }
+      heads.push({el:h,cls:cls});
+    });
+    var ho=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        var m=heads.filter(function(x){return x.el===e.target;})[0]; if(!m) return;
+        if(e.isIntersecting){ void m.el.offsetWidth; m.el.classList.add(m.cls); }
+        else { m.el.classList.remove(m.cls); }
+      });
+    },{threshold:0.65});
+    heads.forEach(function(m){ho.observe(m.el);});
+  }
   window.addEventListener('scroll',onScroll,{passive:true});
   window.addEventListener('resize',onScroll);
   onScroll();
@@ -720,4 +774,3 @@ footer{padding-top:2.6rem;border-top:2px solid var(--sky)}
 </script>
 </body>
 </html>
-
