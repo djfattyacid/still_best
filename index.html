@@ -765,7 +765,7 @@ footer{padding-top:2.6rem}
   if('IntersectionObserver' in window){
     var io=new IntersectionObserver(function(es){
       es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
-    },{threshold:0.08});
+    },{threshold:0, rootMargin:'0px 0px -60px 0px'});
     document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
   } else {
     document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in');});
